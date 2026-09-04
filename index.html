@@ -108,3 +108,244 @@
 <script src="script.js"></script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tamil Christian Songs</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f7fb;
+      color: #222;
+    }
+
+    header {
+      background: #172554;
+      color: white;
+      padding: 25px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    input, textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 14px;
+      margin: 8px 0 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    textarea {
+      min-height: 250px;
+      resize: vertical;
+    }
+
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 13px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-right: 8px;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    .song-output {
+      white-space: pre-wrap;
+      background: #f8fafc;
+      padding: 20px;
+      border-radius: 10px;
+      line-height: 1.8;
+    }
+
+    .chorus {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>🎵 Tamil Christian Songs</h1>
+  <p>Lyrics • Chorus • Chords • YouTube</p>
+</header>
+
+<div class="container">
+
+  <div class="card">
+
+    <h2>🎬 Add YouTube Song</h2>
+
+    <label>YouTube Link</label>
+
+    <input
+      type="url"
+      id="youtubeLink"
+      placeholder="Paste YouTube link here"
+    >
+
+    <label>Song Title</label>
+
+    <input
+      type="text"
+      id="songTitle"
+      placeholder="Enter song title"
+    >
+
+    <button onclick="generateLyrics()">
+      🎵 Generate Lyrics & Chorus
+    </button>
+
+  </div>
+
+
+  <div class="card">
+
+    <h2>📝 Your Lyrics</h2>
+
+    <p>
+      For songs you own or have permission to use, paste the lyrics below.
+    </p>
+
+    <textarea
+      id="lyricsInput"
+      placeholder="Paste your lyrics here..."
+    ></textarea>
+
+    <button onclick="organizeLyrics()">
+      ✨ Organize Lyrics
+    </button>
+
+  </div>
+
+
+  <div class="card">
+
+    <h2>🎤 Generated Song</h2>
+
+    <div id="songOutput" class="song-output">
+      Your lyrics will appear here...
+    </div>
+  </div>
+
+</div>
+
+
+<script>
+
+function generateLyrics() {
+
+  const youtube = document.getElementById("youtubeLink").value;
+  const title = document.getElementById("songTitle").value;
+
+  if (!youtube) {
+    alert("Please enter YouTube link");
+    return;
+  }
+
+  if (!title) {
+    alert("Please enter song title");
+    return;
+  }
+
+  alert(
+    "YouTube link added successfully.\n\n" +
+    "Now paste your own lyrics below and click Organize Lyrics."
+  );
+
+}
+
+
+function organizeLyrics() {
+
+  const title =
+    document.getElementById("songTitle").value || "Tamil Christian Song";
+
+  const lyrics =
+    document.getElementById("lyricsInput").value.trim();
+
+  if (!lyrics) {
+    alert("Please paste your lyrics first.");
+    return;
+  }
+
+  const lines = lyrics.split("\n");
+
+  let output = "";
+
+  output += "🎵 " + title + "\n\n";
+
+  output += "[Verse 1]\n";
+
+  let chorusFound = false;
+
+  lines.forEach((line, index) => {
+
+    const cleanLine = line.trim();
+
+    if (!cleanLine) {
+      output += "\n";
+      return;
+    }
+
+    // If the same line appears again,
+    // mark it as possible chorus.
+    const previousLines = lines
+      .slice(0, index)
+      .map(x => x.trim());
+
+    if (
+      previousLines.includes(cleanLine) &&
+      cleanLine.length > 5 &&
+      !chorusFound
+    ) {
+
+      output += "\n[Chorus]\n";
+      output += cleanLine + "\n";
+
+      chorusFound = true;
+
+    } else {
+
+      output += cleanLine + "\n";
+
+    }
+
+  });
+
+  output += "\n\n🎹 Chords: Add your own chords here";
+
+  document.getElementById("songOutput").textContent = output;
+
+}
+
+</script>
+
+</body>
+</html>
