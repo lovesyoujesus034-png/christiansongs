@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ChristianSongs by Augustin Vetha Priyan</title>
+  <meta name="description" content="ChristianSongs by Augustin Vetha Priyan — lyrics, chords, keyboard notes, PDFs and YouTube songs.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <div>
+      <div class="brand">ChristianSongs</div>
+      <div class="brand-sub">by Augustin Vetha Priyan</div>
+    </div>
+    <nav>
+      <a href="#songs">Songs</a>
+      <a href="#church">Church</a>
+      <a href="#report">Report / AI</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="pill">Tamil Christian Songs</span>
+      <h1>Sing. Play. Worship.</h1>
+      <p>Watch the YouTube song, read lyrics and chords, view keyboard notes, and open the song PDF — all in one place.</p>
+      <a class="btn" href="#songs">Browse Songs</a>
+    </div>
+    <div class="hero-card">
+      <div class="cross">✝</div>
+      <h2>ChristianSongs</h2>
+      <p>by Augustin Vetha Priyan</p>
+    </div>
+  </div>
+</section>
+
+<section id="songs" class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">SONG LIBRARY</span>
+        <h2>Christian Songs</h2>
+      </div>
+      <input id="search" class="search" type="search" placeholder="Search songs...">
+    </div>
+    <div id="songList" class="song-list"></div>
+  </div>
+</section>
+
+<section id="church" class="section alt">
+  <div class="container church-card">
+    <div class="church-icon">⛪</div>
+    <div>
+      <span class="eyebrow">CHURCH</span>
+      <h2>Village Revival Missionary Movement</h2>
+      <p>📍 Aaralur, Thanjavur</p>
+      <div class="pastor-box">
+        <div class="pastor-placeholder">Pastor<br><small>Add Later</small></div>
+        <div>
+          <strong>Pastor</strong>
+          <p class="muted">Pastor name and image can be added later in <code>songs.js</code>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="report" class="section">
+  <div class="container report-card">
+    <span class="eyebrow">HELP & FEEDBACK</span>
+    <h2>Report a Problem / Ask AI</h2>
+    <p>Report incorrect lyrics, chords, keyboard notes, PDF links, YouTube links, or ask a question.</p>
+    <form id="reportForm">
+      <div class="form-grid">
+        <input id="reportName" type="text" placeholder="Your name (optional)">
+        <select id="reportType">
+          <option>Wrong lyrics</option>
+          <option>Wrong chord</option>
+          <option>Keyboard notes</option>
+          <option>PDF problem</option>
+          <option>YouTube link</option>
+          <option>Other question</option>
+        </select>
+      </div>
+      <textarea id="reportMessage" rows="5" placeholder="Write your report or question..." required></textarea>
+      <button class="btn" type="submit">Send Report</button>
+    </form>
+    <div id="aiReply" class="ai-reply" hidden></div>
+    <p class="small muted">AI Reply is a demo on this static GitHub Pages site. Connect a secure backend/API later for real AI responses. Never put an API secret in this website.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <strong>ChristianSongs by Augustin Vetha Priyan</strong>
+    <p>© 2026 Augustin Vetha Priyan. All Rights Reserved.</p>
+    <p>Village Revival Missionary Movement · Aaralur, Thanjavur</p>
+  </div>
+</footer>
+
+<script src="songs.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
