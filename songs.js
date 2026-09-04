@@ -11,7 +11,7 @@
 */
 const siteSettings = {
   pastor: {
-    name: "",
+    name: "REV.SAM SELVA KUMAR",
     image: ""
   }
 };
