@@ -29,17 +29,3 @@ const songs = [
     pdf: ""
   }
 ];
-
-const songs = [
-  {
-    title: "5000 பேருக்கு",
-    artist: "Anita Kingsly ",
-    key: "C",
-    youtube: "https://youtu.be/ksW3WkJ-1X4?si=OFkvgwfsMss-DrF4",
-    lyrics: "Paste your original/licensed lyrics here.\\n\\nVerse 1...\\n\\nChorus...",
-    chords: "C#m7          F#\\nYour lyric line\\nAm             B\\nYour next lyric line",
-    keyboardNotes: "C  D  E  G  A\\nAdd your keyboard notes here.",
-    notesImage: "",
-    pdf: ""
-  }
-];
